@@ -1,0 +1,142 @@
+/* Mobile first */
+:root {
+    /* color values */
+    --light-color: #fff;
+    --dark-color: #333;
+    /* font values */
+    --small-text: 1em;
+    --medium-text: 1.5em;
+    --large-text: 2em;
+    --xlarge-text: 2.5em;
+}
+
+/* Headline section */
+.headline-section {
+    margin: 3rem 4rem;
+}
+
+.headline-section .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline-section h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.headline-section .game-level-headline {
+    margin-top: 0.5rem;
+    padding: 0.3rem;
+    background-color: #eeeeee;
+}
+
+.headline-section p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#start-game-btn {
+    margin-top: 2rem;
+    border-width: 0;
+    padding: 1rem 1.5rem;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#start-game-btn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+/* Game section */
+.game-section {
+    margin-bottom: 2rem;
+}
+
+.game-board__colors {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 2rem;
+    padding: 5px;
+}
+
+.box {
+    width: calc(33.33% - 10px);
+    height: 125px;
+    margin: 5px;
+    border: 4px solid #fff;
+    border-radius: 5px;
+    background-color: #333;
+    box-shadow: 0px 0px 1px 1px #333;
+    transition: all 500ms;
+}
+
+.box:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.game-board__main-color {
+    width: 70%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.3rem auto 0 auto;
+    border: 4px solid #fff;
+    border-radius: 5px;
+    background-color: #333;
+    box-shadow: 0px 0px 1px 1px #333;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Score section */
+.score-section {
+    margin-bottom: 2rem;
+}
+
+.score-section p {
+    text-align: center;
+    color: #333;
+}
+
+#score-output {
+    font-size: 2rem;
+}
+
+#time-left-output {
+    font-size: 1.4rem;
+}
+
+/* Desktop */ 
+@media screen and (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .game-board {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .game-board__colors {
+        margin: 0;
+        width: 50%;
+    }
+
+    .game-board__main-color {
+        height: 250px;
+        margin: 0 0 0 5rem;
+        width: 40%;
+    }
+}

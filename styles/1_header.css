@@ -1,0 +1,53 @@
+/* Mobile first */
+:root {
+    /* color values */
+    --light-color: #fff;
+    --dark-color: #333;
+    /* font values */
+    --small-text: 1em;
+    --medium-text: 1.5em;
+    --large-text: 2em;
+    --xlarge-text: 2.5em;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    background-color: aqua;
+}
+
+.navigation {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: var(--dark-color);
+}
+
+.navigation__item {
+    padding: 0 25px;
+    text-align: center;
+}
+
+.navigation__item a {
+    text-decoration: none;
+    color: var(--light-color);
+    font-size: var(--medium-text);
+}
+
+.navigation__item a:hover {
+    opacity: 0.7;
+}
+
+.fa-star, .fa-star-half-alt {
+    color: #DAA520;
+    transition: transform 1000ms;
+}
+
+.navigation__item a:hover .fa-star {
+    transform: rotate(360deg);
+}
+
+.navigation__item a:hover .fa-star-half-alt {
+    transform: rotate(360deg);
+}

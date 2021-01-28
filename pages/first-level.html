@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find A Color Game: EASY</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/0_resets.css">
+    <link rel="stylesheet" href="../styles/1_header.css">
+    <link rel="stylesheet" href="../styles/2_footer.css">
+    <link rel="stylesheet" href="../styles/main/1_first-level.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <!-- CUSTOM JS (game logic) -->
+    <script defer src="../scripts/first-level.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="conatiner">
+            <ul class="navigation">
+                <li class="navigation__item"><a href="../index.html"><i class="fas fa-home"></i> HOMEPAGE</a></li>
+                <li class="navigation__item"><a href="./first-level.html"><i class="far fa-star"></i> EASY</a></li>
+                <li class="navigation__item"><a href="./second-level.html"><i class="fas fa-star-half-alt"></i> MEDIUM</a></li>
+                <li class="navigation__item"><a href="./third-level.html"><i class="fas fa-star"></i> HARD</a></li>
+                <!-- <li><a href="./pages/scoreboard.html">Scoreboard</a></li> OPTIONAL-->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="headline-section">
+            <div class="container">
+                <h1>Find A Color Game</h1>
+                <h3 class="game-level-headline">FIRST LEVEL</h3>
+                <p>Match the main color with given ones</p>
+                <button id="start-game-btn">Start game</button>
+            </div>
+        </section>
+        <section class="game-section">
+            <div class="container">
+                <div class="game-board">
+                    <div class="game-board__colors">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="game-board__main-color">Find my color</div>
+                </div>
+            </div>
+        </section>
+        <section class="score-section">
+            <div class="container">
+                <p id="score-output">Your score: <span id="score-amount">0</span></p>
+                <p id="time-left-output">Time left: <span id="time-amount">15 seconds</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; All rights reserved | 2021</p>
+    </footer>
+</body>
+</html>
