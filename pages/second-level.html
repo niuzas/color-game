@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,15 +13,21 @@
     <link rel="stylesheet" href="../styles/main/2_second-level.css">
 
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <!-- CUSTOM JS (game logic) -->
+    <script defer src="../scripts/second-level.js"></script>
 </head>
+
 <body>
     <header>
         <nav class="conatiner">
             <ul class="navigation">
                 <li class="navigation__item"><a href="../index.html"><i class="fas fa-home"></i> HOMEPAGE</a></li>
                 <li class="navigation__item"><a href="./first-level.html"><i class="far fa-star"></i> EASY</a></li>
-                <li class="navigation__item"><a href="./second-level.html"><i class="fas fa-star-half-alt"></i> MEDIUM</a></li>
+                <li class="navigation__item"><a href="./second-level.html"><i class="fas fa-star-half-alt"></i>
+                        MEDIUM</a></li>
                 <li class="navigation__item"><a href="./third-level.html"><i class="fas fa-star"></i> HARD</a></li>
                 <!-- <li><a href="./pages/scoreboard.html">Scoreboard</a></li> OPTIONAL-->
             </ul>
@@ -28,11 +35,31 @@
     </header>
 
     <main>
-        <!-- Main Code -->
+        <section class="game-section">
+            <div class="container">
+                <div class="game-board">
+                    <div class="game-board__colors">
+
+                    </div>
+                    <section class="game-board__controls">
+                        <button id="start-game-btn">Start game</button>
+                        <div class="game-board__main-color"><span class="game-board__main-color__text">Find my
+                                color</span>
+                        </div>
+                        <div>
+                            <p id="score-output">Your score: <span id="score-amount">0</span></p>
+                            <p id="time-left-output">Time left: <span id="time-amount"></span></p>
+                        </div>
+                        <p id="game-hint">Match the main color with given ones</p>
+
+                    </section>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <!-- Footer Code -->
-    </footer>
+
 </body>
+
 </html>
