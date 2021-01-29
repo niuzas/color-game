@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find A Color Game</title>
+    <title>Find A Color Game: MEDIUM</title>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./styles/0_resets.css">
     <link rel="stylesheet" href="./styles/1_header.css">
     <link rel="stylesheet" href="./styles/2_footer.css">
-    <link rel="stylesheet" href="./styles/main/0_index.css">
+    <link rel="stylesheet" href="./styles/game.css">
 
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <!-- CUSTOM JS (game logic) -->
+    <script defer src="../scripts/game.js"></script>
 </head>
+
 <body>
     <header>
         <nav class="conatiner">
             <ul class="navigation">
-                <li class="navigation__item"><a href="./pages/first-level.html"><i class="far fa-star"></i> EASY</a></li>
-                <li class="navigation__item"><a href="./pages/second-level.html"><i class="fas fa-star-half-alt"></i> MEDIUM</a></li>
-                <li class="navigation__item"><a href="./pages/third-level.html"><i class="fas fa-star"></i> HARD</a></li>
+                <li class="navigation__item"><a href="" class="game-easy"><i class="far fa-star"></i> EASY</a></li>
+                <li class="navigation__item"><a href="" class="game-medium"><i class="fas fa-star-half-alt"></i>MEDIUM</a></li>
+                <li class="navigation__item"><a href="" class="game-hard"><i class="fas fa-star"></i> HARD</a></li>
                 <!-- <li><a href="./pages/scoreboard.html">Scoreboard</a></li> OPTIONAL-->
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Main Code -->
+        <section class="game-section">
+            <div class="container">
+                <div class="game-board">
+                    <div class="game-board__colors">
+
+                    </div>
+                    <section class="game-board__controls">
+                        <button id="start-game-btn">Start game</button>
+                        <div class="game-board__main-color"><span class="game-board__main-color__text">Find my
+                                color</span>
+                        </div>
+                        <div>
+                            <p id="score-output">Your score: <span id="score-amount">0</span></p>
+                            <p id="time-left-output">Time left: <span id="time-amount"></span></p>
+                        </div>
+                        <p id="game-hint">Match the main color with given ones</p>
+
+                    </section>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <!-- Footer Code -->
-    </footer>
+
 </body>
+
 </html>

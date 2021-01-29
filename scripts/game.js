@@ -8,15 +8,19 @@ let mainColorBlock = document.querySelector('.game-board__main-color');
 let mainCOlorBlockText = document.querySelector('.game-board__main-color__text');
 let scoreAmount = document.querySelector('#score-amount');
 let timeLeftOutput = document.querySelector('#time-amount');
+let btnGameEasy = document.querySelector('.game-easy');
+let btnGameMedium = document.querySelector('.game-medium');
+let btnGameHard = document.querySelector('.game-hard');
 
 let mainColor;
 let lastMainColor;
 
 let score = 0;
-
 let time = 22000;
 let timeUp = false;
+
 let boxesCount = 36;
+let boxStyle = 'width: calc(15.33% - 10px);height: 70px;';
 
 // Functions
 
@@ -28,13 +32,14 @@ function gameInit() {
 }
 
 function generateBoxes(count) {
-  while (count--) gameBoardColors.innerHTML += '<div class="box"><div id="plusOne">+1</div></div>';
+  gameBoardColors.innerHTML = '';
+  while (count--) gameBoardColors.innerHTML += `<div class="box" style="${boxStyle} "><div id="plusOne">+1</div></div>`;
 }
 
 function getColorCode() {
-  var makeColorCode = '0123456789ABCDEF';
-  var code = '#';
-  for (var count = 0; count < 6; count++) {
+  const makeColorCode = '0123456789ABCDEF';
+  let code = '#';
+  for (let count = 0; count < 6; count++) {
     code = code + makeColorCode[Math.floor(Math.random() * 16)];
   }
   return code;
@@ -48,7 +53,7 @@ function setColor() {
     colors.push(getColorCode());
   }
 
-  while (randomNumbArr.length < 36) {
+  while (randomNumbArr.length < boxesCount) {
     let randomNumb = Math.floor(Math.random() * colors.length);
     if (randomNumbArr.indexOf(randomNumb) === -1) randomNumbArr.push(randomNumb);
   }
@@ -57,6 +62,7 @@ function setColor() {
 
   Array.from(boxes).forEach((box) => {
     box.style.backgroundColor = colors[randomNumbArr[i]];
+    box.querySelector('#plusOne').style.color = box.style.backgroundColor;
     i++;
   });
 }
@@ -65,6 +71,10 @@ function startGame() {
   setColor();
 
   startGameBtn.disabled = true;
+  // btnGameEasy.disabled = true;
+  // btnGameMedium.disabled = true;
+  // lbtnGameHard.disabled = true;
+
   score = 0;
   timeUp = false;
 
@@ -115,7 +125,7 @@ function catchColor(e) {
           // keyframes
           { visibility: 'visible' },
           { transform: 'translateY(0px)' },
-          { transform: 'translateY(-200px)' },
+          { transform: 'translateY(-300px)' },
         ],
         {
           // timing options
@@ -156,3 +166,24 @@ function changeColor() {
 document.addEventListener('DOMContentLoaded', gameInit());
 startGameBtn.addEventListener('click', startGame);
 boxes.forEach((box) => box.addEventListener('click', catchColor));
+btnGameEasy.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log(e);
+  boxesCount = 9;
+  boxStyle = 'width: calc(33.33% - 10px);height: 125px;';
+  gameInit();
+});
+btnGameMedium.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log(e);
+  boxesCount = 36;
+  boxStyle = 'width: calc(15.33% - 10px);height: 70px;';
+  gameInit();
+});
+btnGameHard.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log(e);
+  boxesCount = 64;
+  boxStyle = 'width: calc(12% - 10px);height: 60px;';
+  gameInit();
+});
